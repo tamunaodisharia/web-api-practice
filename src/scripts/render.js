@@ -20,14 +20,10 @@ export function renderHTML() {
   addEvents();
 }
 function addEvents() {
-  document
-    .getElementById("button1")
-    .addEventListener("click", async function () {
-      displayFirstComponent();
-    });
-  document
-    .getElementById("button2")
-    .addEventListener("click", async function () {
-      displaySecondComponent();
-    });
+  document.getElementById("button1").addEventListener("click", function () {
+    displayFirstComponent();
+  });
+  document.getElementById("button2").addEventListener("click", function () {
+    displaySecondComponent();
+  });
 }
