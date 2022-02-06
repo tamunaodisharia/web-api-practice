@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const config = {
-  entry: path.resolve(__dirname, "src", "index.js"), // src/index.js is the path of our js file from Step 3
+  entry: path.resolve(__dirname, "src", "index.ts"), // src/index.js is the path of our js file from Step 3
   mode: "development",
   output: {
     path: path.resolve(__dirname, "./dist"), // you can name this however you want
@@ -24,15 +24,18 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts?$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: ["ts-loader"],
       },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
     ],
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
   },
 };
 export default config;

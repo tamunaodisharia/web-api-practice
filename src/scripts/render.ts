@@ -1,5 +1,5 @@
-import { displaySecondComponent } from "./secondComponent.js";
-import { displayFirstComponent } from "./firstComponent.js";
+import { displaySecondComponent } from "./secondComponent";
+import { displayFirstComponent } from "./firstComponent";
 
 export function renderHTML() {
   //renders initial html
@@ -16,14 +16,14 @@ export function renderHTML() {
       <input type="text" id="input4" class="input" />
       <button id="button2" type="submit">Submit</button>
     </div>`;
-  container.insertAdjacentHTML("afterbegin", html);
+  container?.insertAdjacentHTML("afterbegin", html);
   addEvents();
 }
 function addEvents() {
-  document.getElementById("button1").addEventListener("click", function () {
+  document.getElementById("button1")?.addEventListener("click", function () {
     displayFirstComponent();
   });
-  document.getElementById("button2").addEventListener("click", function () {
+  document.getElementById("button2")?.addEventListener("click", function () {
     displaySecondComponent();
   });
 }
